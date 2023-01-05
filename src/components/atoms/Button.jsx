@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BLACK_COLOR } from "../constants";
+import { BLACK_COLOR } from "../../constants";
 
 const StyledButton = styled.button`
   font-family: Roboto, sans-serif;

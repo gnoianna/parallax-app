@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import Link from "../atoms/Link";
-import { scrollToElement } from "../constants";
-import { NavigationContext } from "../contexts/NavigationContext";
+import { scrollToElement } from "../../constants";
+import { NavigationContext } from "../../context/NavigationContext";
 
 const List = styled.ul`
   list-style-type: none;

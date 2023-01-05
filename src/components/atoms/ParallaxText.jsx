@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ORANGE_COLOR } from "../constants";
+import { ORANGE_COLOR } from "../../constants";
 
 export const ParallaxText = styled.h1`
   font-family: "Playfair Display", serif;

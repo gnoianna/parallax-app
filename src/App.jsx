@@ -1,14 +1,22 @@
-import PageHeader from "./organisms/PageHeader";
-import Hiking from "./pages/Hiking";
-import Relax from "./pages/Relax";
-import Skiing from "./pages/Skiing";
-import NavigationProvider from "./contexts/NavigationContext";
+import PageHeader from "./components/organisms/PageHeader";
+import Hiking from "./components/pages/Hiking";
+import Relax from "./components/pages/Relax";
+import Skiing from "./components/pages/Skiing";
+import NavigationProvider from "./context/NavigationContext";
+import { createGlobalStyle } from "styled-components";
 
-const BLOCK_TYPES = {
-  SKIING: "skiing",
-  HIKING: "hiking",
-  RELAX: "relax",
-};
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    box-sizing: border-box;
+    background-color: #322d2d;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+`;
 
 function App() {
   return (
@@ -16,7 +24,8 @@ function App() {
       <PageHeader />
       <Skiing></Skiing>
       <Hiking></Hiking>
-      <Relax></Relax>
+      {/* <Relax></Relax> */}
+      <GlobalStyle />
     </NavigationProvider>
   );
 }
