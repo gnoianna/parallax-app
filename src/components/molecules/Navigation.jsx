@@ -20,6 +20,7 @@ const List = styled.ul`
 const Navigation = () => {
   const { loadedSections, activeNavLink, setActiveNavLink } = useContext(NavigationContext);
 
+  if (loadedSections.length === 0) return null;
   return (
     <nav>
       <List>

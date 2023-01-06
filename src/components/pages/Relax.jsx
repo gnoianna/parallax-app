@@ -1,6 +1,7 @@
 import { useNavigationObserver } from "../../hooks/useNavigationObserver";
 import Parallax from "../organisms/Parallax";
 import SectionContent from "../organisms/SectionContent";
+
 const sectionData = { sectionName: "relax", sectionId: "relaxSection" };
 
 const Relax = () => {

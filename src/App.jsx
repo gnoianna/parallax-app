@@ -1,9 +1,11 @@
-import PageHeader from "./components/organisms/PageHeader";
-import Hiking from "./components/pages/Hiking";
-import Relax from "./components/pages/Relax";
-import Skiing from "./components/pages/Skiing";
-import NavigationProvider from "./context/NavigationContext";
 import { createGlobalStyle } from "styled-components";
+import PageHeader from "./components/organisms/PageHeader";
+import Hero from "./components/pages/Hero";
+import Footer from "./components/pages/Footer";
+import Hiking from "./components/pages/Hiking";
+import Skiing from "./components/pages/Skiing";
+import Relax from "./components/pages/Relax";
+import NavigationProvider from "./context/NavigationContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,9 +24,11 @@ function App() {
   return (
     <NavigationProvider>
       <PageHeader />
-      <Skiing></Skiing>
-      <Hiking></Hiking>
-      {/* <Relax></Relax> */}
+      <Hero />
+      <Skiing />
+      <Hiking />
+      {/* <Relax /> */}
+      <Footer />
       <GlobalStyle />
     </NavigationProvider>
   );

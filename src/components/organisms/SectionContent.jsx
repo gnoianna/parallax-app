@@ -6,6 +6,7 @@ const StyledWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px;
+  min-height: 150vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto repeat(5, 1fr);
