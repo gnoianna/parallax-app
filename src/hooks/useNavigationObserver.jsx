@@ -1,5 +1,5 @@
 import { useRef, useContext, useEffect, useState } from "react";
-import { NavigationContext } from "../contexts/NavigationContext";
+import { NavigationContext } from "../context/NavigationContext";
 
 export const useNavigationObserver = (sectionElement) => {
   const { setActiveNavLink, setLoadedSections } = useContext(NavigationContext);
