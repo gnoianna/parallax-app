@@ -7,7 +7,7 @@ const Hero = () => {
     <Parallax>
       <ParallaxText order={1}>let's go!</ParallaxText>
       <ParallaxImage order={8} src="./hero/skier.png" />
-      <ParallaxImage order={-2} src="./hero/background.png" />
+      <ParallaxImage order={-2} src="./hero/background.jpg" />
     </Parallax>
   );
 };

@@ -10,13 +10,10 @@ const Hiking = () => {
 
   return (
     <section ref={hikingRef} id={sectionData.sectionId} style={{ scrollMargin: "80px" }}>
-      <SectionContent
-        header={sectionData.sectionName}
-        images={["./skiing/background.png", "./skiing/background.png"]}
-      />
+      <SectionContent header={sectionData.sectionName} images={["./hiking/section-1.jpg", "./hiking/section-2.jpg"]} />
       <Parallax>
-        <ParallaxImage order={8} src="./hiking/people.png" />
-        <ParallaxImage order={-2} src="./hiking/background.png" />
+        <ParallaxImage horizontal={true} order={8} src="./hiking/mountain.png" />
+        <ParallaxImage order={-2} src="./hiking/background.jpg" />
       </Parallax>
     </section>
   );

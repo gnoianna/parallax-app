@@ -5,7 +5,7 @@ const Header = styled.header`
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;

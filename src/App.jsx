@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto, sans-serif;
     font-size: 18px;
     font-weight: 400;
+    color: white;
     box-sizing: border-box;
     background-color: #322d2d;
     margin: 0;
@@ -27,7 +28,7 @@ function App() {
       <Hero />
       <Skiing />
       <Hiking />
-      {/* <Relax /> */}
+      <Relax />
       <Footer />
       <GlobalStyle />
     </NavigationProvider>
