@@ -7,7 +7,7 @@ export const useNavigationObserver = (sectionElement) => {
   const ref = useRef(null);
 
   const observer = new IntersectionObserver(([entry]) => setIsOnScreen(entry.isIntersecting), {
-    threshold: [0.25, 0.5, 0.75],
+    threshold: [0.1, 0.25, 0.5, 0.75],
   });
 
   useEffect(() => {

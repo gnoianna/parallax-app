@@ -1,6 +1,6 @@
 import useLazyLoadingObserver from "../../hooks/useLazyLoadingObserver";
 import styled from "styled-components";
-import { SectionHeader } from "../atoms/SectionHeader";
+import { Header } from "../atoms/Header";
 import Paragraph from "../atoms/Paragraph";
 
 const StyledWrapper = styled.div`
@@ -35,7 +35,7 @@ const SectionContent = ({ header, images }) => {
     <StyledWrapper ref={ref}>
       {isVisible && (
         <>
-          <SectionHeader>{header}</SectionHeader>
+          <Header>{header}</Header>
           <Image src={images[0]} style={{ gridColumn: "1/2", gridRow: "2/5" }} />
           <Paragraph style={{ gridColumn: "2/3", gridRow: "2/4" }} />
           <Image src={images[1]} style={{ gridColumn: "2/3", gridRow: "4/6" }} />

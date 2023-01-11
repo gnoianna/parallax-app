@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionHeader } from "../atoms/SectionHeader";
+import { Header } from "../atoms/Header";
 import Button from "../atoms/Button";
 import { ORANGE_COLOR } from "../../constants";
 
@@ -63,9 +63,7 @@ const Footer = () => {
     <OuterWrapper>
       <InnerWrapper>
         <FlexDiv column>
-          <SectionHeader color={ORANGE_COLOR} simple>
-            come with us!
-          </SectionHeader>
+          <Header footer>come with us!</Header>
           <Description>let's gain new experience together.</Description>
           <Button text={"Register"} color={ORANGE_COLOR} />
         </FlexDiv>

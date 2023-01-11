@@ -3,6 +3,7 @@ import { BLACK_COLOR, ORANGE_COLOR } from "../../constants";
 
 const Link = styled.li`
   color: ${BLACK_COLOR};
+  background-color: white;
   padding: 10px 10px;
   border-bottom: 4px solid transparent;
   cursor: pointer;
