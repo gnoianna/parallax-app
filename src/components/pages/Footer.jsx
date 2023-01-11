@@ -11,7 +11,7 @@ const OuterWrapper = styled.footer`
     width: 100%;
     height: 238px;
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     display: block;
     content: "";
@@ -33,11 +33,15 @@ const InnerWrapper = styled.div`
   gap: 100px;
 `;
 
-const FlexWrapper = styled.div`
+const FlexDiv = styled.div`
   display: flex;
-  flex-direction: ${({ direction }) => direction};
+  flex-direction: ${({ column }) => (column ? "column" : "row")};
   align-items: center;
   gap: 30px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const Description = styled.h3`
@@ -50,6 +54,7 @@ const Description = styled.h3`
 
 const Icon = styled.img`
   width: 30px;
+  padding: 0px 15px;
   cursor: pointer;
 `;
 
@@ -57,20 +62,22 @@ const Footer = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
-        <FlexWrapper direction={"column"}>
+        <FlexDiv column>
           <SectionHeader color={ORANGE_COLOR} simple>
             come with us!
           </SectionHeader>
           <Description>let's gain new experience together.</Description>
           <Button text={"Register"} color={ORANGE_COLOR} />
-        </FlexWrapper>
-        <FlexWrapper>
+        </FlexDiv>
+        <FlexDiv>
           <p>follow us</p>
-          <Icon src="./footer/instagram.svg" />
-          <Icon src="./footer/facebook.svg" />
-          <Icon src="./footer/twitter.svg" />
+          <div>
+            <Icon src="./footer/instagram.svg" />
+            <Icon src="./footer/facebook.svg" />
+            <Icon src="./footer/twitter.svg" />
+          </div>
           <p style={{ marginLeft: "auto" }}>all rights reserved | 2023</p>
-        </FlexWrapper>
+        </FlexDiv>
       </InnerWrapper>
     </OuterWrapper>
   );

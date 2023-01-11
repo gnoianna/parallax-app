@@ -14,7 +14,7 @@ const Text = styled.h1`
   top: 0;
   left: 0;
   margin: 0;
-  padding-top: 10%;
+  padding-top: 25vh;
   width: 100%;
   z-index: ${({ order }) => order};
 `;

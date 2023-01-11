@@ -1,40 +1,32 @@
 import { useRef, useEffect } from "react";
 
 const useParallaxEffect = (order, horizontal) => {
-  const containerRef = useRef(null);
+  const ref = useRef(null);
 
   const callbackFunction = ([entry]) => {
     if (entry.isIntersecting) {
       window.addEventListener("scroll", () => {
-        if (containerRef.current) {
-          const offsetFromPageTop = containerRef.current.parentElement.offsetTop;
+        if (ref.current) {
+          const offsetFromPageTop = ref.current.parentElement.offsetTop;
+          const newValue =
+            window.scrollY >= offsetFromPageTop ? (window.scrollY - offsetFromPageTop) * (1 / Math.abs(order)) : 0;
 
-          containerRef.current.style.top =
-            window.scrollY >= offsetFromPageTop
-              ? (window.scrollY - offsetFromPageTop) * (1 / Math.abs(order)) + "px"
-              : "0px";
-
-          if (horizontal) {
-            containerRef.current.style.left =
-              window.scrollY >= offsetFromPageTop
-                ? (window.scrollY - offsetFromPageTop) * (-2 / Math.abs(order)) + "px"
-                : "0px";
-          }
+          ref.current.style.top = newValue + "px";
+          if (horizontal) ref.current.style.left = -2 * newValue + "px";
         }
       });
     }
   };
+  const observer = new IntersectionObserver(callbackFunction, {});
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, {});
-    if (containerRef.current) observer.observe(containerRef.current);
-
+    if (ref.current) observer.observe(ref.current);
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      observer.disconnect();
     };
   });
 
-  return containerRef;
+  return ref;
 };
 
 export default useParallaxEffect;

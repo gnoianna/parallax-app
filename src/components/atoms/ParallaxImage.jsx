@@ -12,8 +12,8 @@ const Image = styled.img`
 `;
 
 const ParallaxImage = ({ order, src, horizontal = false }) => {
-  const imageRef = useParallaxEffect(order, horizontal);
-  return <Image ref={imageRef} order={order} src={src} horizontal={horizontal} />;
+  const ref = useParallaxEffect(order, horizontal);
+  return <Image ref={ref} order={order} src={src} horizontal={horizontal} />;
 };
 
 export default ParallaxImage;

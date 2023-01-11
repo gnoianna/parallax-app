@@ -1,26 +1,21 @@
 import { useRef, useState, useEffect } from "react";
 
 const useLazyLoadingObserver = () => {
-  const containerRef = useRef(null);
+  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const callbackFunction = (entries) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
+  const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
+    rootMargin: "100%",
+  });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, {
-      rootMargin: "50%",
-    });
-    if (containerRef.current) observer.observe(containerRef.current);
-
+    if (ref.current) observer.observe(ref.current);
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      observer.disconnect();
     };
   });
 
-  return [containerRef, isVisible];
+  return [ref, isVisible];
 };
 
 export default useLazyLoadingObserver;

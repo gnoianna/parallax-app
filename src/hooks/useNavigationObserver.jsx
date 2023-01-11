@@ -11,7 +11,7 @@ export const useNavigationObserver = (sectionElement) => {
   });
 
   useEffect(() => {
-    observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current);
     return () => {
       observer.disconnect();
     };
@@ -22,7 +22,7 @@ export const useNavigationObserver = (sectionElement) => {
       setActiveNavLink(sectionElement.sectionName);
       setLoadedSections((prev) => new Set([...prev, sectionElement]));
     }
-  }, [isOnScreen, setActiveNavLink, sectionElement.sectionName]);
+  }, [isOnScreen]);
 
   return ref;
 };
