@@ -10,11 +10,11 @@ The project was made for a college course credit. The most important concepts we
 
 ### Initial view
 
-<img width="70%" src="public/screenshot_1.png">
+<img src="public/screenshot_1.png">
 
 ### Scrolling
 
-<img width="70%" src="public/screenshot_2.png">
+<img src="public/screenshot_2.png">
 
 ## Setup
 
