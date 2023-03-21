@@ -13,7 +13,9 @@ const StyledWrapper = styled.div`
 const Parallax = ({ children }) => {
   const [containerRef, isVisible] = useLazyLoadingObserver();
 
-  return <StyledWrapper ref={containerRef}>{isVisible && children}</StyledWrapper>;
+  return (
+    <StyledWrapper ref={containerRef}>{isVisible && children}</StyledWrapper>
+  );
 };
 
 export default Parallax;

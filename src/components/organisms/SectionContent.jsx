@@ -36,9 +36,15 @@ const SectionContent = ({ header, images }) => {
       {isVisible && (
         <>
           <Header>{header}</Header>
-          <Image src={images[0]} style={{ gridColumn: "1/2", gridRow: "2/5" }} />
+          <Image
+            src={images[0]}
+            style={{ gridColumn: "1/2", gridRow: "2/5" }}
+          />
           <Paragraph style={{ gridColumn: "2/3", gridRow: "2/4" }} />
-          <Image src={images[1]} style={{ gridColumn: "2/3", gridRow: "4/6" }} />
+          <Image
+            src={images[1]}
+            style={{ gridColumn: "2/3", gridRow: "4/6" }}
+          />
           <Paragraph style={{ gridColumn: "1/3", gridRow: "6/7" }} />
         </>
       )}
